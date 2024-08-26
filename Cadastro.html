@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <style>
+     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -33,6 +33,14 @@
             margin: 8px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        .form-container input:invalid {
+            border-color: #e74c3c; 
+        }
+        .form-container input:valid {
+            border-color: #040e47; 
         }
         .form-container input[type="submit"],
         .form-container input[type="reset"] {
@@ -42,15 +50,18 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #0e0138;
             color: white;
+            transition: background-color 0.3s ease;
         }
         .form-container input[type="reset"] {
             background-color: #f44336;
         }
-        .form-container input[type="submit"]:hover,
+        .form-container input[type="submit"]:hover {
+            background-color: #140361;
+        }
         .form-container input[type="reset"]:hover {
-            opacity: 0.9;
+            background-color: #e53935;
         }
     </style>
 </head>
@@ -59,16 +70,16 @@
         <h2>Cadastro de Usuário</h2>
         <form action="#" method="POST">
             <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" required>
+            <input type="text" id="nome" name="nome" required minlength="3" maxlength="50">
 
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" required>
 
             <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required>
+            <input type="password" id="senha" name="senha" required minlength="6">
 
             <label for="confirma_senha">Confirmação de Senha</label>
-            <input type="password" id="confirma_senha" name="confirma_senha" required>
+            <input type="password" id="confirma_senha" name="confirma_senha" required minlength="6">
 
             <input type="submit" value="Enviar">
             <input type="reset" value="Limpar">
@@ -76,4 +87,6 @@
     </div>
 </body>
 </html>
+
+
 

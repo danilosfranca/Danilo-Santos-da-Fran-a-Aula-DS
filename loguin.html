@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            position: relative;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px 40px; 
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            position: relative;
+        }
+        .login-container input:invalid {
+            border-color: #e74c3c;
+        }
+        .login-container input:valid {
+            border-color: #811486;
+        }
+        .login-container .input-icon {
+            position: absolute;
+            left: 10px;
+            top: 35px;
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+        .login-container .input-icon.password {
+            top: 85px;
+        }
+        .login-container input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #510c7b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #7a45a0;
+            transform: translateY(-2px); 
+        }
+        .login-container label {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <div class="input-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="User Icon" class="input-icon">
+               <p>
+                <label for="username">Nome de Usuário</label>
+                <input type="text" id="username" name="username" required minlength="3" maxlength="20">
+            </div>
+
+            <div class="input-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="Password Icon" class="input-icon password">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required minlength="8">
+            </div>
+
+            <label>
+                <input type="checkbox" id="remember" name="remember">
+                Lembrar-me
+            </label>
+
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
+</body>
+</html>
